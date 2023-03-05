@@ -13,6 +13,7 @@ import {AiOutlineMoneyCollect} from 'react-icons/ai'
 import {faker} from '@faker-js/faker'
 import ButtonGroup from 'antd/es/button/button-group';
 import dayjs from 'dayjs';
+import BuildinCalendar from './calendar/BuildinCalendar';
 
 const { Link } = Anchor
 
@@ -116,19 +117,26 @@ const App = () => {
         <Divider />
         <Card>
           <FloatButton icon={<GrAdd/>} />
-          <Button onClick={() => {
-            notification.success({
-              message: "ABCDEF"
-            })
-          }}>
+          <Button 
+            onClick={() => {
+              notification.success({
+                message: "ABCDEF"
+              })
+            }}
+            style={{margin: 10}}
+          >
             Show notification
           </Button>
-          <Button onClick={() => setModalOpen(true)}>
+          <Button 
+            onClick={() => setModalOpen(true)}
+            style={{margin: 10}}  
+          >
             Add User
           </Button>
           <Button 
             danger 
             type='primary' 
+            style={{margin: 10}}
             onClick={() => {
               Modal.confirm({
                 title: "Do you want to delete this?",
@@ -214,6 +222,9 @@ const App = () => {
               <Typography.Title>Data 4</Typography.Title>
             </Card>
           </Col>
+        </Row>
+        <Row>
+          <BuildinCalendar />
         </Row>
         <Row gutter={10} style={{marginTop: 10}}>
           <Col span={24}>
